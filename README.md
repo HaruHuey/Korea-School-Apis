@@ -56,14 +56,14 @@ class NeisApisCore(object)
 def MonthCalender(self, Month)
 ```
 *__MonthCalender__(self, Month)*  
-Month 예) '1'
+Month 예) '1'  
 1월 ~ 12월 사이의 값 입력
 
 ```python
 def SemesterCalender(self, Semester)
 ```
 *__SemesterCalender__(self, Semester)*  
-Semester 예) '1'
+Semester 예) '1'  
 1학기 / 2학기 중 하나 입력
 
 ## Restful API 가이드
