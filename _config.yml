@@ -5,4 +5,4 @@ language: 'ko-kr'
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-source: README.md
+source: pagesREADME.md
