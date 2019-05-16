@@ -4,14 +4,17 @@
 
 ## 환경 셋업
 Python 3.6 이상  
+
 ######Windows CMD / Powershell
 ```shell
 pip install beautifulsoup4 requests urllib3 urllib5
 ```
+
 ######Linux Shell
 ```shell
 pip install beautifulsoup4, requests, urllib3, urllib5
 ```
+
 ######개별 설치
 ```shell
 pip install beautifulsoup4
