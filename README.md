@@ -3,7 +3,7 @@
 나이스 대국민서비스(학생 / 학부모)에서 제공하는 데이터와 학교와 학생에게 필요한 데이터를 간단하게 Restful API와 라이브러리 형태로 제공합니다.
 
 ## 환경 셋업
-Python 3.6 이상
+Python 3.6 이상  
 ######Windows CMD / Powershell
 ```shell
 pip install beautifulsoup4 requests urllib3 urllib5
