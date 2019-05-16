@@ -48,7 +48,8 @@ pprint(SemesterTODO)
 ```python
 class NeisApisCore(object)
 ```
-*__ __init__ __(self, EduOffice, SchoolType, SchoolCode)*
+*__ __init__ __(self, EduOffice, SchoolType, SchoolCode)*  
+
 [EduOffice · 지역 교육청]() 예) '서울'
 [SchoolType · 교육기관 종류]() 예) '4'
 [SchoolCode · 학교 코드]() 예) 'B000000000'
