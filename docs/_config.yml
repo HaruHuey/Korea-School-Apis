@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-source: pagesREADME.md
+source: README.md
 markdown: kramdown
 highlighter: rouge
 language: 'ko-kr'
