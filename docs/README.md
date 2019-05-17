@@ -48,9 +48,9 @@ pprint(SemesterTODO)
 class NeisApisCore(object)
 ```
 *__ __init__ __(self, EduOffice, SchoolType, SchoolCode)*  
-[EduOffice · 지역 교육청]() 예) '서울'  
-[SchoolType · 교육기관 종류]() 예) '4'  
-[SchoolCode · 학교 코드]() 예) 'B000000000'  
+[EduOffice · 지역 교육청](#지역-교육청) 예) '서울'  
+[SchoolType · 교육기관 종류](#교육기관-종류) 예) '4'  
+[SchoolCode · 학교 코드](#학교-코드) 예) 'B000000000'  
 
 ```python
 def MonthCalender(self, Month)
@@ -102,9 +102,8 @@ https://apis.haruhuey.kr/open/schoolapis?reqdata=[요청데이터]&code=[학교�
 | 고등학교   | 4 |
 
 #### 접속 주소
-|------------------+------------------|
 | 이름 - 데이터 값 |
-|------------------|:------------------:|
+|------------------+------------------|
 | MonthCalender - /sts_sci_sf01_001.do |
 | SemesterCalender - /sts_sci_sf00_001.do |
 
