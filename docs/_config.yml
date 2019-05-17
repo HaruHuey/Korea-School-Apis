@@ -6,3 +6,5 @@ language: 'ko-kr'
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+markdown: kramdown
+urls: "https://haruhuey.github.io/Korea-School-Apis/"
