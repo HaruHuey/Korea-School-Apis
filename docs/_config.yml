@@ -1,1 +1,8 @@
 theme: jekyll-theme-cayman
+source: pagesREADME.md
+markdown: kramdown
+highlighter: rouge
+language: 'ko-kr'
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
