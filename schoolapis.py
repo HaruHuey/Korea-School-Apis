@@ -31,6 +31,8 @@ API Guide:
     >>> School = SchoolApisCore("서울", "고등학교", "B000000000")
     <schoolapis.SchoolApisCore object at 0x0000000000000000>
 
+    Apis Return Type = None(기본 값) / JSON / XML
+
 Copyright: (c) 2019 by HaruHuey(KiHyun Kim)
 
 Source Code: https://github.com/HaruHuey/Korea-School-Apis
@@ -55,6 +57,9 @@ import datetime
 import urllib.request
 import requests
 from bs4 import BeautifulSoup
+
+def SchoolCode(Name):
+    pass
 
 class SchoolApisCore(object):
     # 교육청 · 교육기관 종류 · 학교 코드
@@ -88,9 +93,11 @@ class SchoolApisCore(object):
             "고등학교": "4"
         }
 
-        NeisPage_List = {
+        Page_List = {
             "MonthCalender": "/sts_sci_sf01_001.do",
-            "SemesterCalender": "/sts_sci_sf00_001.do"
+            "SemesterCalender": "/sts_sci_sf00_001.do",
+            "MonthMeal": "/sts_sci_md00_001.do",
+            "WeeksMeal": "/sts_sci_md01_001.do"
         }
 
         # 사전 요일 생성 [7일:일 ~ 토]
@@ -107,17 +114,14 @@ class SchoolApisCore(object):
         # 요일 목록
         self._Day = Day_List
         # 사이트 주소
-        self._NeisPage = NeisPage_List
+        self._Page = Page_List
 
     # 월 별 캘린더 조회 · 해당 월 입력 // Month 값이 없을 경우 현재 월 조회
-    def MonthCalender(self, Month):
+    def MonthCalender(self, Month, Type="None"):
         if int(Month) in range(1, 9):
             Month = "&mm=" + "0" + Month
 
-        else:
-            pass
-
-        setURL = self._BaseURL + self._NeisPage['MonthCalender'] + self._SchoolCode + self._SchoolType + self._Year + Month
+        setURL = self._BaseURL + self._Page['MonthCalender'] + self._SchoolCode + self._SchoolType + self._Year + Month
         connectURL = urllib.request.urlopen(setURL, timeout=5)
         readURL = connectURL.read()
 
@@ -153,23 +157,24 @@ class SchoolApisCore(object):
                     DayData['Schedule'] = aData
 
                     returnData.append(DayData)
-
-                else:
-                    pass
-
                 line_count += 1
             WeeksCount += 1
 
-        return returnData
+        if Type == "None":
+            return returnData
 
+        if Type in ["JSON", "json", "Json"]:
+            import json
+            JSON_returnData = json.dumps(returnData, ensure_ascii=False)
+            return JSON_returnData
     
     # 학기 별 캘린더 조회 · 해당 학기 입력 // Semester(학기) 값이 없을 경우 1학기 조회
     # *** 참고 ***
     # 1학기 : 3월 · 4월 · 5월 · 6월 · 7월 · 8월
     # 2학기 : 9월 · 10월 · 11월 · 12월 · 1월 · 2월
-    def SemesterCalender(self, Semester):
+    def SemesterCalender(self, Semester, Type="None"):
         Semester = "&sem=" + Semester
-        setURL = self._BaseURL + self._NeisPage['SemesterCalender'] + self._SchoolCode + self._SchoolType + self._Year + Semester
+        setURL = self._BaseURL + self._Page['SemesterCalender'] + self._SchoolCode + self._SchoolType + self._Year + Semester
         connectURL = urllib.request.urlopen(setURL, timeout=5)
         readURL = connectURL.read()
 
@@ -222,4 +227,16 @@ class SchoolApisCore(object):
                 if x != {}:
                     returnData[index].append(x)
 
-        return returnData
+        if Type == "None":
+            return returnData
+
+        if Type in ["JSON", "json", "Json"]:
+            import json
+            JSON_returnData = json.dumps(returnData, ensure_ascii=False)
+            return JSON_returnData
+
+    def MonthMeal(self, Month, Type="None"):
+        pass
+
+    def WeeksMeal(self, Type="None"):
+        pass
