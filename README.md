@@ -24,28 +24,28 @@ pip install urllib5
 ## 라이브러리 사용 가이드
 ###### 일정 API @ 1개월
 ```python
-from neisapis import NeisApisCore
+from schoolapis import SchoolApisCore
 from pprint import pprint # pprint
 
-Neis = NeisApisCore("서울", "고등학교", "B000000000")
-MonthTODO = Neis.MonthCalender("5") # 개월
+School = SchoolApisCore("서울", "고등학교", "B000000000")
+MonthTODO = School.MonthCalender("5") # 개월
 
 pprint(MonthTODO)
 ```
 
 ###### 일정 API @ 1학기
 ```python
-from neisapis import NeisApisCore
+from schoolapis import schoolApisCore
 from pprint import pprint # pprint
 
-Neis = NeisApisCore("서울", "고등학교", "B000000000")
-SemesterTODO = Neis.SemesterCalender("1") # 학기
+School = SchoolApisCore("서울", "고등학교", "B000000000")
+SemesterTODO = School.SemesterCalender("1") # 학기
 
 pprint(SemesterTODO)
 ```
 #### 기능 상세
 ```python
-class NeisApisCore(object)
+class SchoolApisCore(object)
 ```
 *__ __init__ __(self, EduOffice, SchoolType, SchoolCode)*  
 [EduOffice · 지역 교육청](#지역-교육청) 예) '서울'  
@@ -121,4 +121,4 @@ API에 오류 혹은 기능 추가를 요청해주세요.
 기능 추가에 관해서는 kkh555999@naver.com 으로 내용을 보내주세요!
 
 ## 라이센스
-이 라이브러리는 [Apache License 2.0](https://github.com/HaruHuey/Korea-Neis-Apis/blob/master/LICENSE)을 따라 자유롭게 이용하실 수 있습니다.
+이 라이브러리는 [Apache License 2.0](https://github.com/HaruHuey/Korea-School-Apis/blob/master/LICENSE)을 따라 자유롭게 이용하실 수 있습니다.
