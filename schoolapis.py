@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
 """
-Korea Neis Apis
+Korea School Apis
 ~~~~~~~~~~~~~~~
 
-Python3 기반 NEIS 대국민서비스 API 라이브러리
+Python3 기반 NEIS 대국민서비스 · 학교 데이터 API 라이브러리
 
 API Guide:
 
-    >>> from neisapis import NeisApisCore
-    >>> Neis = NeisApisCore("서울", "고등학교", "B000000000")
-    >>> MonthTODO = Neis.MonthCalender("5")
+    >>> from schoolapis import SchoolApisCore
+    >>> School = SchoolApisCore("서울", "고등학교", "B000000000")
+    >>> MonthTODO = School.MonthCalender("5")
     >>> print(str(MonthTODO))
     [
         {'Schedule': '재량휴업일',
@@ -27,19 +27,19 @@ API Guide:
 
 ... or More Apis:
 
-    >>> from neisapis import NeisApisCore
-    >>> Neis = NeisApisCore("서울", "고등학교", "B000000000")
-    <neisapis.NeisApisCore object at 0x0000000000000000>
+    >>> from schoolapis import SchoolApisCore
+    >>> School = SchoolApisCore("서울", "고등학교", "B000000000")
+    <schoolapis.SchoolApisCore object at 0x0000000000000000>
 
 Copyright: (c) 2019 by HaruHuey(KiHyun Kim)
 
-Source Code: https://github.com/HaruHuey/Korea-Neis-Apis
+Source Code: https://github.com/HaruHuey/Korea-School-Apis
 
-README: https://haruhuey.github.io/Korea-Neis-Apis/
+README: https://haruhuey.github.io/Korea-School-Apis/
 
 License: Apache License 2.0
 
-class NeisApisCore
+class SchoolApisCore
 ~~~~~~~~~~~~~~~~~~
 
 초기 값 설정: 교육청 지역 · 교육기관 종류(정수) · 학교 코드
@@ -56,7 +56,7 @@ import urllib.request
 import requests
 from bs4 import BeautifulSoup
 
-class NeisApisCore(object):
+class SchoolApisCore(object):
     # 교육청 · 교육기관 종류 · 학교 코드
     def __init__(self, EduOffice, SchoolType, SchoolCode):
         # 지역 교육청
